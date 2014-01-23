@@ -7,7 +7,13 @@
  * http://github.com/rstacruz/jquery.transit
  */
 
-(function($) {
+(function (factory) {
+  if (typeof define === 'function' && define.amd) {
+    define(['jquery'], factory);
+  } else {
+    factory(jQuery);
+  }
+}(function ($) {
   $.transit = {
     version: "0.9.9",
 
@@ -724,4 +730,4 @@
 
   // Export some functions for testable-ness.
   $.transit.getTransitionValue = getTransition;
-})(jQuery);
+}));
